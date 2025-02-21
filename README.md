@@ -1,4 +1,4 @@
-# Coffee Shop Sales
+# Coffee-Shop-Sales-Project
 Analyzed Coffee shop sales datasets of financial year year 2023 and find out valuable insights for business requirement.
 ## PROJECT KPI'S
 ### 1. Total Sales Analysis:
