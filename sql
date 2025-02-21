@@ -1,7 +1,7 @@
 #-- CREATING DATABASE
-create database coffee_shop_sales_db;
-use coffee_shop_sales_db;
-select * from coffee_shop_sales;
+CREATE DATABASE coffee_shop_sales_db;
+USE coffee_shop_sales_db;
+SELECT * FROM coffee_shop_sales;
 
 
 #-- TO OFF THE UPDATE SAFE MODE
@@ -35,7 +35,7 @@ CHANGE COLUMN `ï»¿transaction_id` transaction_id INT;
 #--TOTAL SALES
 SELECT ROUND(SUM(unit_price * transaction_qty)) as Total_Sales 
 FROM coffee_shop_sales
-WHERE MONTH(transaction_date) = 5 -- for month of (CM-May)
+WHERE MONTH(transaction_date) = 5 -- for month of (CM-May);
  
 #-- TOTAL SALES KPI - MOM DIFFERENCE AND MOM GROWTH
 SELECT
@@ -56,7 +56,7 @@ ORDER BY
 #-- TOTAL ORDERS
 SELECT COUNT(transaction_id) as Total_Orders
 FROM coffee_shop_sales 
-WHERE MONTH (transaction_date)= 5 -- for month of (CM-May)
+WHERE MONTH (transaction_date)= 5 -- for month of (CM-May);
  
 #-- TOTAL ORDERS KPI - MOM DIFFERENCE AND MOM GROWTH
 SELECT 
@@ -77,7 +77,7 @@ ORDER BY
 #-- TOTAL QUANTITY SOLD
 SELECT SUM(transaction_qty) as Total_Quantity_Sold
 FROM coffee_shop_sales 
-WHERE MONTH(transaction_date) = 5 -- for month of (CM-May)
+WHERE MONTH(transaction_date) = 5 -- for month of (CM-May);
  
 #-- TOTAL QUANTITY SOLD KPI - MOM DIFFERENCE AND MOM GROWTH
 SELECT 
@@ -103,8 +103,7 @@ SELECT
 FROM 
     coffee_shop_sales
 WHERE 
-    transaction_date = '2023-05-18'; --For 18 May 2023
-
+    transaction_date = '2023-05-18';   --For 18 May 2023
 If you want to get exact Rounded off values then use below query to get the result:
 SELECT 
     CONCAT(ROUND(SUM(unit_price * transaction_qty) / 1000, 1),'K') AS total_sales,
